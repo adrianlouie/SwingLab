@@ -1,0 +1,50 @@
+name: SwingLab
+options:
+  bundleIdPrefix: com.adrian
+  deploymentTarget:
+    iOS: "18.0"
+  createIntermediateGroups: true
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    GENERATE_INFOPLIST_FILE: YES
+    CURRENT_PROJECT_VERSION: "1"
+    MARKETING_VERSION: "1.0"
+targets:
+  SwingLab:
+    type: application
+    platform: iOS
+    sources:
+      - SwingLab
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.adrian.swinglab
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations: "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+        INFOPLIST_KEY_NSCameraUsageDescription: "SwingLab records your golf swing in slow motion so it can analyze your positions."
+        INFOPLIST_KEY_NSMicrophoneUsageDescription: "Audio is captured with your swing videos (you can film without sound too)."
+        INFOPLIST_KEY_CFBundleDisplayName: SwingLab
+        TARGETED_DEVICE_FAMILY: "1"
+        ENABLE_USER_SCRIPT_SANDBOXING: YES
+  SwingLabTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - SwingLabTests
+    dependencies:
+      - target: SwingLab
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.adrian.swinglab.tests
+  SwingLabUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - SwingLabUITests
+    dependencies:
+      - target: SwingLab
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.adrian.swinglab.uitests

@@ -1,0 +1,19 @@
+# Xcode
+build/
+DerivedData/
+*.xcodeproj/xcuserdata/
+*.xcodeproj/project.xcworkspace/xcuserdata/
+*.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+*.xcuserstate
+*.xcscmblueprint
+
+# OS cruft
+.DS_Store
+
+# Local AI-assistant config/notes -- not for the public repo
+CLAUDE.md
+.claude/
+
+# ml/ has its own .gitignore (data/checkpoints/venv/rig build artifacts --
+# far too large for git, and gitignored separately so `ml/` itself, the
+# source code, and real_clips/ heuristic JSON stay tracked)
